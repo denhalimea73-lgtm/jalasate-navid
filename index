@@ -7,277 +7,51 @@
     <link href="https://fonts.googleapis.com/css2?family=Vazir:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Vazir', sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            color: #fff;
-        }
-
-        /* صفحه ورودی */
-        .landing-page {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 20px;
-        }
-
-        .main-container {
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(20px);
-            border-radius: 20px;
-            padding: 50px;
-            max-width: 500px;
-            width: 100%;
-            text-align: center;
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .logo {
-            font-size: 4rem;
-            margin-bottom: 20px;
-            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 15px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-        }
-
-        .subtitle {
-            font-size: 1.1rem;
-            margin-bottom: 40px;
-            color: rgba(255, 255, 255, 0.8);
-        }
-
-        .input-group {
-            margin-bottom: 30px;
-        }
-
-        .input-field {
-            width: 100%;
-            padding: 15px 20px;
-            border: none;
-            border-radius: 15px;
-            font-size: 1.1rem;
-            background: rgba(255, 255, 255, 0.9);
-            color: #333;
-            margin-bottom: 15px;
-            transition: all 0.3s ease;
-        }
-
-        .input-field:focus {
-            outline: none;
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-        }
-
-        .btn {
-            padding: 15px 30px;
-            border: none;
-            border-radius: 15px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-block;
-            margin: 10px;
-        }
-
-        .btn-primary {
-            background: linear-gradient(45deg, #ff6b6b, #ee5a52);
-            color: white;
-        }
-
-        .btn-secondary {
-            background: linear-gradient(45deg, #4ecdc4, #44a08d);
-            color: white;
-        }
-
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
-        }
-
-        /* صفحه جلسه */
-        .meeting-page {
-            display: none;
-            height: 100vh;
-            background: #1a1a2e;
-        }
-
-        .meeting-header {
-            background: rgba(0, 0, 0, 0.8);
-            padding: 15px 30px;
-            display: flex;
-            justify-content: between;
-            align-items: center;
-            border-bottom: 1px solid #333;
-        }
-
-        .meeting-title {
-            font-size: 1.5rem;
-            font-weight: 600;
-        }
-
-        .meeting-controls {
-            display: flex;
-            gap: 15px;
-        }
-
-        .control-btn {
-            padding: 10px;
-            border: none;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.1);
-            color: white;
-            cursor: pointer;
-            font-size: 1.2rem;
-            transition: all 0.3s ease;
-        }
-
-        .control-btn:hover {
-            background: rgba(255, 255, 255, 0.2);
-            transform: scale(1.1);
-        }
-
-        .meeting-content {
-            display: flex;
-            height: calc(100vh - 80px);
-        }
-
-        .video-section {
-            flex: 2;
-            background: #0f0f23;
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .video-placeholder {
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(45deg, #16213e, #0f3460);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            color: rgba(255, 255, 255, 0.6);
-        }
-
-        .whiteboard-section {
-            flex: 1;
-            background: #fff;
-            border-left: 2px solid #333;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .whiteboard-header {
-            background: #f8f9fa;
-            padding: 15px;
-            border-bottom: 1px solid #ddd;
-            color: #333;
-            text-align: center;
-            font-weight: 600;
-        }
-
-        .whiteboard-tools {
-            padding: 10px;
-            background: #f1f3f4;
-            display: flex;
-            gap: 10px;
-            justify-content: center;
-            border-bottom: 1px solid #ddd;
-        }
-
-        .tool-btn {
-            padding: 8px 12px;
-            border: none;
-            border-radius: 8px;
-            background: #4285f4;
-            color: white;
-            cursor: pointer;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
-        }
-
-        .tool-btn:hover {
-            background: #3367d6;
-        }
-
-        .tool-btn.active {
-            background: #1a73e8;
-        }
-
-        #whiteboard {
-            flex: 1;
-            cursor: crosshair;
-            background: white;
-        }
-
-        .features {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .feature {
-            text-align: center;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 15px;
-            backdrop-filter: blur(10px);
-        }
-
-        .feature i {
-            font-size: 2rem;
-            margin-bottom: 15px;
-            color: #4ecdc4;
-        }
-
-        .hidden {
-            display: none !important;
-        }
-
-        @media (max-width: 768px) {
-            .meeting-content {
-                flex-direction: column;
-            }
-            
-            .whiteboard-section {
-                flex: none;
-                height: 300px;
-                border-left: none;
-                border-top: 2px solid #333;
-            }
-        }
-
-        /* انیمیشن‌های زیبا */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .main-container {
-            animation: fadeIn 1s ease-out;
-        }
+        /* --- تمام CSS همان کد تو است --- */
+        * {margin: 0; padding: 0; box-sizing: border-box;}
+        body {font-family: 'Vazir', sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh; color: #fff;}
+        .landing-page {display: flex; justify-content: center; align-items: center; min-height: 100vh; padding: 20px;}
+        .main-container {background: rgba(255,255,255,0.15); backdrop-filter: blur(20px); border-radius: 20px; padding: 50px;
+            max-width: 500px; width: 100%; text-align: center; box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+            border: 1px solid rgba(255,255,255,0.2);}
+        .logo {font-size: 4rem; margin-bottom: 20px; background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;}
+        .title {font-size: 2.5rem; font-weight: 700; margin-bottom: 15px; text-shadow: 2px 2px 4px rgba(0,0,0,0.3);}
+        .subtitle {font-size: 1.1rem; margin-bottom: 40px; color: rgba(255,255,255,0.8);}
+        .input-group {margin-bottom: 30px;}
+        .input-field {width: 100%; padding: 15px 20px; border: none; border-radius: 15px; font-size: 1.1rem;
+            background: rgba(255,255,255,0.9); color: #333; margin-bottom: 15px; transition: all 0.3s ease;}
+        .input-field:focus {outline: none; transform: translateY(-2px); box-shadow: 0 10px 20px rgba(0,0,0,0.2);}
+        .btn {padding: 15px 30px; border: none; border-radius: 15px; font-size: 1.1rem; font-weight: 600; cursor: pointer;
+            transition: all 0.3s ease; text-decoration: none; display: inline-block; margin: 10px;}
+        .btn-primary {background: linear-gradient(45deg, #ff6b6b, #ee5a52); color: white;}
+        .btn-secondary {background: linear-gradient(45deg, #4ecdc4, #44a08d); color: white;}
+        .btn:hover {transform: translateY(-3px); box-shadow: 0 15px 25px rgba(0,0,0,0.3);}
+        .meeting-page {display: none; height: 100vh; background: #1a1a2e;}
+        .meeting-header {background: rgba(0,0,0,0.8); padding: 15px 30px; display: flex; justify-content: between; align-items: center; border-bottom: 1px solid #333;}
+        .meeting-title {font-size: 1.5rem; font-weight: 600;}
+        .meeting-controls {display: flex; gap: 15px;}
+        .control-btn {padding: 10px; border: none; border-radius: 50%; background: rgba(255,255,255,0.1); color: white; cursor: pointer; font-size: 1.2rem; transition: all 0.3s ease;}
+        .control-btn:hover {background: rgba(255,255,255,0.2); transform: scale(1.1);}
+        .meeting-content {display: flex; height: calc(100vh - 80px);}
+        .video-section {flex: 2; background: #0f0f23; position: relative; display: flex; justify-content: center; align-items: center;}
+        .video-placeholder {width: 100%; height: 100%; background: linear-gradient(45deg, #16213e, #0f3460);
+            display: flex; flex-direction: column; justify-content: center; align-items: center; color: rgba(255,255,255,0.6);}
+        .whiteboard-section {flex: 1; background: #fff; border-left: 2px solid #333; display: flex; flex-direction: column;}
+        .whiteboard-header {background: #f8f9fa; padding: 15px; border-bottom: 1px solid #ddd; color: #333; text-align: center; font-weight: 600;}
+        .whiteboard-tools {padding: 10px; background: #f1f3f4; display: flex; gap: 10px; justify-content: center; border-bottom: 1px solid #ddd;}
+        .tool-btn {padding: 8px 12px; border: none; border-radius: 8px; background: #4285f4; color: white; cursor: pointer; font-size: 0.9rem; transition: all 0.3s ease;}
+        .tool-btn:hover {background: #3367d6;}
+        .tool-btn.active {background: #1a73e8;}
+        #whiteboard {flex: 1; cursor: crosshair; background: white;}
+        .features {display: flex; justify-content: center; gap: 30px; margin-top: 40px;}
+        .feature {text-align: center; padding: 20px; background: rgba(255,255,255,0.1); border-radius: 15px; backdrop-filter: blur(10px);}
+        .feature i {font-size: 2rem; margin-bottom: 15px; color: #4ecdc4;}
+        .hidden {display: none !important;}
+        @media (max-width: 768px) {.meeting-content {flex-direction: column;} .whiteboard-section {flex: none; height: 300px; border-left: none; border-top: 2px solid #333;}}
+        @keyframes fadeIn {from {opacity: 0; transform: translateY(30px);} to {opacity: 1; transform: translateY(0);}}
+        .main-container {animation: fadeIn 1s ease-out;}
     </style>
 </head>
 <body>
@@ -287,56 +61,30 @@
             <div class="logo">🎓</div>
             <h1 class="title">جلسات نوید</h1>
             <p class="subtitle">پلتفرم پیشرفته کنفرانس آنلاین برای کلاس‌ها و جلسات درسی</p>
-            
             <div class="input-group">
                 <input type="text" id="roomName" class="input-field" placeholder="نام جلسه را وارد کنید" maxlength="50">
                 <input type="text" id="userName" class="input-field" placeholder="نام شما" maxlength="30">
             </div>
-            
-            <button class="btn btn-primary" onclick="createMeeting()">
-                <i class="fas fa-plus"></i> ایجاد جلسه جدید
-            </button>
-            <button class="btn btn-secondary" onclick="joinMeeting()">
-                <i class="fas fa-sign-in-alt"></i> پیوستن به جلسه
-            </button>
-
+            <button class="btn btn-primary" onclick="createMeeting()"><i class="fas fa-plus"></i> ایجاد جلسه جدید</button>
+            <button class="btn btn-secondary" onclick="joinMeeting()"><i class="fas fa-sign-in-alt"></i> پیوستن به جلسه</button>
             <div class="features">
-                <div class="feature">
-                    <i class="fas fa-video"></i>
-                    <p>ویدئو کنفرانس HD</p>
-                </div>
-                <div class="feature">
-                    <i class="fas fa-desktop"></i>
-                    <p>اشتراک صفحه</p>
-                </div>
-                <div class="feature">
-                    <i class="fas fa-palette"></i>
-                    <p>تخته هوشمند</p>
-                </div>
+                <div class="feature"><i class="fas fa-video"></i><p>ویدئو کنفرانس HD</p></div>
+                <div class="feature"><i class="fas fa-desktop"></i><p>اشتراک صفحه</p></div>
+                <div class="feature"><i class="fas fa-palette"></i><p>تخته هوشمند</p></div>
             </div>
         </div>
     </div>
-
     <!-- صفحه جلسه -->
     <div class="meeting-page" id="meetingPage">
         <div class="meeting-header">
             <div class="meeting-title" id="currentMeetingTitle">جلسه درس</div>
             <div class="meeting-controls">
-                <button class="control-btn" onclick="toggleMic()" title="میکروفون">
-                    <i class="fas fa-microphone" id="micIcon"></i>
-                </button>
-                <button class="control-btn" onclick="toggleCamera()" title="دوربین">
-                    <i class="fas fa-video" id="cameraIcon"></i>
-                </button>
-                <button class="control-btn" onclick="shareScreen()" title="اشتراک صفحه">
-                    <i class="fas fa-desktop"></i>
-                </button>
-                <button class="control-btn" onclick="endMeeting()" title="پایان جلسه" style="background: #ff4757;">
-                    <i class="fas fa-phone-slash"></i>
-                </button>
+                <button class="control-btn" onclick="toggleMic()" title="میکروفون"><i class="fas fa-microphone" id="micIcon"></i></button>
+                <button class="control-btn" onclick="toggleCamera()" title="دوربین"><i class="fas fa-video" id="cameraIcon"></i></button>
+                <button class="control-btn" onclick="shareScreen()" title="اشتراک صفحه"><i class="fas fa-desktop"></i></button>
+                <button class="control-btn" onclick="endMeeting()" title="پایان جلسه" style="background: #ff4757;"><i class="fas fa-phone-slash"></i></button>
             </div>
         </div>
-
         <div class="meeting-content">
             <div class="video-section">
                 <div class="video-placeholder">
@@ -349,34 +97,24 @@
                         </p>
                     </div>
                 </div>
-                <!-- اینجا ویدئو کنفرانس Jitsi قرار می‌گیره -->
                 <div id="jitsi-container" style="width: 100%; height: 100%; display: none;"></div>
             </div>
-
             <div class="whiteboard-section">
                 <div class="whiteboard-header">
                     <i class="fas fa-palette"></i> تخته هوشمند
                 </div>
                 <div class="whiteboard-tools">
-                    <button class="tool-btn active" onclick="setTool('pen')" data-tool="pen">
-                        <i class="fas fa-pen"></i> قلم
-                    </button>
-                    <button class="tool-btn" onclick="setTool('eraser')" data-tool="eraser">
-                        <i class="fas fa-eraser"></i> پاک‌کن
-                    </button>
-                    <button class="tool-btn" onclick="clearWhiteboard()">
-                        <i class="fas fa-trash"></i> پاک کردن
-                    </button>
+                    <button class="tool-btn active" onclick="setTool('pen')" data-tool="pen"><i class="fas fa-pen"></i> قلم</button>
+                    <button class="tool-btn" onclick="setTool('eraser')" data-tool="eraser"><i class="fas fa-eraser"></i> پاک‌کن</button>
+                    <button class="tool-btn" onclick="clearWhiteboard()"><i class="fas fa-trash"></i> پاک کردن</button>
                     <input type="color" id="colorPicker" value="#000000" style="width: 40px; height: 32px; border: none; border-radius: 4px;">
                 </div>
                 <canvas id="whiteboard"></canvas>
             </div>
         </div>
     </div>
-
     <!-- اسکریپت Jitsi Meet -->
     <script src="https://meet.jit.si/external_api.js"></script>
-    
     <script>
         let currentTool = 'pen';
         let isDrawing = false;
@@ -384,135 +122,102 @@
         let jitsiApi = null;
         let micEnabled = true;
         let cameraEnabled = true;
-
-        // راه‌اندازی کانواس وایت‌برد
         function initWhiteboard() {
             canvas = document.getElementById('whiteboard');
             ctx = canvas.getContext('2d');
-            
             function resizeCanvas() {
                 const rect = canvas.parentElement.getBoundingClientRect();
                 canvas.width = rect.width;
-                canvas.height = rect.height - 100; // کم کردن ارتفاع هدر و تولز
+                canvas.height = rect.height - 100;
             }
-            
             resizeCanvas();
             window.addEventListener('resize', resizeCanvas);
-
-            // تنظیمات پیش‌فرض
             ctx.strokeStyle = '#000000';
             ctx.lineWidth = 2;
             ctx.lineCap = 'round';
-
-            // رویدادهای رسم
             canvas.addEventListener('mousedown', startDrawing);
             canvas.addEventListener('mousemove', draw);
             canvas.addEventListener('mouseup', stopDrawing);
             canvas.addEventListener('mouseout', stopDrawing);
-
-            // پشتیبانی از تاچ
             canvas.addEventListener('touchstart', handleTouch);
             canvas.addEventListener('touchmove', handleTouch);
             canvas.addEventListener('touchend', stopDrawing);
         }
-
         function startDrawing(e) {
             isDrawing = true;
             const rect = canvas.getBoundingClientRect();
             const x = e.clientX - rect.left;
             const y = e.clientY - rect.top;
-            
             ctx.beginPath();
             ctx.moveTo(x, y);
         }
-
         function draw(e) {
             if (!isDrawing) return;
-            
             const rect = canvas.getBoundingClientRect();
             const x = e.clientX - rect.left;
             const y = e.clientY - rect.top;
-            
             if (currentTool === 'pen') {
                 ctx.globalCompositeOperation = 'source-over';
                 ctx.strokeStyle = document.getElementById('colorPicker').value;
             } else if (currentTool === 'eraser') {
                 ctx.globalCompositeOperation = 'destination-out';
             }
-            
             ctx.lineTo(x, y);
             ctx.stroke();
         }
-
         function stopDrawing() {
             isDrawing = false;
         }
-
         function handleTouch(e) {
             e.preventDefault();
+            if (!e.touches.length) return;
             const touch = e.touches[0];
             const mouseEvent = new MouseEvent(e.type === 'touchstart' ? 'mousedown' : 
-                                            e.type === 'touchmove' ? 'mousemove' : 'mouseup', {
+                                              e.type === 'touchmove' ? 'mousemove' : 'mouseup', {
                 clientX: touch.clientX,
                 clientY: touch.clientY
             });
             canvas.dispatchEvent(mouseEvent);
         }
-
         function setTool(tool) {
             currentTool = tool;
             document.querySelectorAll('.tool-btn').forEach(btn => btn.classList.remove('active'));
             document.querySelector(`[data-tool="${tool}"]`).classList.add('active');
         }
-
         function clearWhiteboard() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
         }
-
         function createMeeting() {
             const roomName = document.getElementById('roomName').value.trim();
             const userName = document.getElementById('userName').value.trim();
-            
             if (!roomName) {
                 alert('لطفاً نام جلسه را وارد کنید');
                 return;
             }
-            
             startMeeting(roomName, userName || 'مهمان');
         }
-
         function joinMeeting() {
             const roomName = document.getElementById('roomName').value.trim();
             const userName = document.getElementById('userName').value.trim();
-            
             if (!roomName) {
                 alert('لطفاً نام جلسه را وارد کنید');
                 return;
             }
-            
             startMeeting(roomName, userName || 'مهمان');
         }
-
         function startMeeting(roomName, userName) {
-            // تغییر به صفحه جلسه
             document.getElementById('landingPage').style.display = 'none';
             document.getElementById('meetingPage').style.display = 'block';
             document.getElementById('currentMeetingTitle').textContent = roomName;
             document.getElementById('meetingCode').textContent = roomName;
-
-            // راه‌اندازی وایت‌برد
             initWhiteboard();
-
-            // راه‌اندازی Jitsi Meet
             const domain = 'meet.jit.si';
             const options = {
                 roomName: roomName,
                 width: '100%',
                 height: '100%',
                 parentNode: document.querySelector('#jitsi-container'),
-                userInfo: {
-                    displayName: userName
-                },
+                userInfo: {displayName: userName},
                 configOverwrite: {
                     startWithAudioMuted: false,
                     startWithVideoMuted: false,
@@ -527,19 +232,13 @@
                     HIDE_INVITE_MORE_HEADER: true
                 }
             };
-
             jitsiApi = new JitsiMeetExternalAPI(domain, options);
-            
-            // نمایش ویدئو
             document.querySelector('.video-placeholder').style.display = 'none';
             document.getElementById('jitsi-container').style.display = 'block';
-
-            // رویدادهای Jitsi
             jitsiApi.addEventListener('readyToClose', () => {
                 endMeeting();
             });
         }
-
         function toggleMic() {
             if (jitsiApi) {
                 if (micEnabled) {
@@ -552,7 +251,6 @@
                 micEnabled = !micEnabled;
             }
         }
-
         function toggleCamera() {
             if (jitsiApi) {
                 if (cameraEnabled) {
@@ -565,40 +263,26 @@
                 cameraEnabled = !cameraEnabled;
             }
         }
-
         function shareScreen() {
             if (jitsiApi) {
                 jitsiApi.executeCommand('toggleShareScreen');
             }
         }
-
         function endMeeting() {
             if (jitsiApi) {
                 jitsiApi.dispose();
                 jitsiApi = null;
             }
-            
-            // بازگشت به صفحه اصلی
             document.getElementById('meetingPage').style.display = 'none';
             document.getElementById('landingPage').style.display = 'flex';
-            
-            // ریست کردن فیلدها
             document.getElementById('roomName').value = '';
             document.getElementById('userName').value = '';
         }
-
-        // رویداد کلیدهای میانبر
         document.addEventListener('keydown', (e) => {
             if (e.ctrlKey || e.metaKey) {
                 switch(e.key) {
-                    case 'm':
-                        e.preventDefault();
-                        toggleMic();
-                        break;
-                    case 'e':
-                        e.preventDefault();
-                        toggleCamera();
-                        break;
+                    case 'm': e.preventDefault(); toggleMic(); break;
+                    case 'e': e.preventDefault(); toggleCamera(); break;
                 }
             }
         });
