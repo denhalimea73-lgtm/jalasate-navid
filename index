@@ -1,336 +1,223 @@
-<html xmlns="http://www.w3.org/1999/xhtml" lang="fa"><head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0">
-  <meta name="mobile-web-app-capable" content="yes">
-  <meta name="description" content="G.math 2">
-  <base href="/">
-  <title>اسکای&zwnj;روم - G.math 2</title>
-  <link rel="icon" type="image/png" href="asset/img/skyroomFav.png">
-  <link rel="stylesheet" href="asset/style.min.css?12.9.11">
-  <style>
-    :root {
-      --wallpaper-tall: url("https://s2.filedn.ir/www.skyroom.online/wallpaper/wallpaper-1661793221867-tall.png");
-      --wallpaper-wide: url("https://s2.filedn.ir/www.skyroom.online/wallpaper/wallpaper-1661793221867-wide.png")
-    }
-  </style>
-</head>
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>جلسات نوید</title>
+    <script src="https://meet.jit.si/external_api.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;700&display=swap');
 
-<body class="col rtl chrome windows relative presenter" dir="rtl">
-<div id="page_login" class="box-grow-zero col col-center login-page hidden">
-  <div class="box-shrink col">
-    <div class="box-shrink row row-center">
-      <div class="box-shrink col spaced login-box">
-        <div class="box-shrink login-title">
-          <div><a href="https://skyroom.online" target="_blank"><img id="vendor_logo" src="asset/img/skyroomFa.png" alt="اسکای&zwnj;روم"></a></div>
-          
-        </div>
-        <div class="box-shrink centered col spaced hidden" id="error_message">
-          <div class="warning"></div>
-        </div>
-             
-        <div class="box-shrink row row-center " id="login_block">
-          <div class="box-grow col col-start">
-            <div class="box-grow row centered">
-              <form class="box-grow col spaced-sm login-form">
-                <div class="row box"><input type="text" id="username" autocomplete="username" autofocus="" placeholder="نام کاربری" class="box-grow" dir="ltr"></div>
-                <div class="row box"><input type="password" id="password" autocomplete="off" placeholder="گذرواژه" class="box-grow" dir="ltr"></div>
-                <div class="row box hidden"><input type="text" id="nickname" autocomplete="nickname" placeholder="نام نمایشی" dir="auto"></div>
-                <div class="spacer-sm"></div>
-                <div class="row justify equal">
-                    <div class="box-grow" id="guest_login">
-                      <button type="button" id="btn_guest" class="orange">میهمان</button>
-                    </div>
-                    <div class="spacer"></div>
-                  <div class="box-grow">
-                    <button type="button" id="btn_login" class="blue">ورود</button>
-                  </div>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-        <div class="box-shrink row row-center hidden" id="page_reload">
-          <button type="button" id="btn_reload" class="orange">بارگذاری دوباره صفحه <svg width="24" height="24" class="icon ">
-                    <use xlink:href="asset/icons.svg?v12.9.11#shape_refresh"></use>
-                  </svg></button>
-        </div> 
-        <div class="box-shrink col col-start" id="login_desc">
-          <div class="box-grow centered devices"><img src="asset/img/devices.svg" alt="Supported Devices">
-          </div>
-        </div>
-        <div class="box-shrink col col-start hidden" id="supported_browsers">
-          <div class="box-shrink">مرورگرهای زیر پشتیبانی می شوند:</div>
-          <div class="box-shrink row row-center justify ltr">
-            <div class="box-shrink browser" id="brw_ch"><a href="https://www.google.com/chrome" title="Chrome 60+"><img src="asset/img/platform/chrome.png" alt="Chrome"></a></div>
-            <div class="box-shrink browser" id="brw_op"><a href="https://www.mozilla.org/en-US/firefox" title="Firefox 60+"><img src="asset/img/platform/firefox.png" alt="Firefox"></a></div>
-            <div class="box-shrink browser" id="brw_ff"><a href="https://www.opera.com/download" title="Opera 47+"><img src="asset/img/platform/opera.png" alt="Opera"></a></div>
-            <div class="box-shrink browser" id="brw_eg"><a href="https://www.microsoft.com/en-us/edge" title="Edge 60+"><img src="asset/img/platform/edge.png" alt="Edge"></a></div>
-            <div class="box-shrink browser" id="brw_sm"><a href="https://www.samsung.com/us/support/owners/app/samsung-internet" title="Samsung 8+"><img src="asset/img/platform/samsung.png" alt="Samsung"></a></div>
-            <div class="box-shrink browser" id="brw_sf"><a href="https://support.apple.com/downloads/safari" title="Safari 12.1+"><img src="asset/img/platform/safari.png" alt="Safari"></a></div>
-          </div>
-        </div> 
-          <div class="box-shrink row row-start language"><select id="language" class="box-shrink" title="زبان">
-                <option value="en">English</option>
-                <option value="fa">Persian</option>
-            </select>
-            
-              <div class="box"></div>
-              <div><a href="https://skyroom.online/support" target="_blank">راهنما</a>
-              </div>
-              <div class="spacer"></div>
-              <div><a href="https://skyroom.online/terms/" target="_blank">قوانین</a></div>
-              <div class="spacer"></div>
-              <div><a href="https://skyroom.online/privacy/" target="_blank">حریم خصوصی</a>
-              </div>
-            
-          </div>
+        :root {
+            --bg-color: #121212;
+            --primary-color: #1a1a1a;
+            --secondary-color: #2a2a2a;
+            --text-color: #e0e0e0;
+            --accent-color: #007bff;
+            --accent-hover: #0056b3;
+            --border-color: #333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Vazirmatn', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            padding: 15px 30px;
+            border-bottom: 1px solid var(--border-color);
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 1.8em;
+            font-weight: 700;
+            color: var(--accent-color);
+        }
+
+        main {
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #setup-container {
+            background-color: var(--primary-color);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            width: 90%;
+            max-width: 500px;
+        }
+
+        #setup-container h2 {
+            margin-bottom: 20px;
+            font-size: 1.5em;
+        }
+
+        #setup-container p {
+            margin-bottom: 30px;
+            color: #aaa;
+        }
+
+        #room-name {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+            font-size: 1em;
+            text-align: center;
+        }
+
+        #start-meeting-btn {
+            width: 100%;
+            padding: 15px;
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1em;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #start-meeting-btn:hover {
+            background-color: var(--accent-hover);
+        }
+
+        #meeting-container {
+            display: none; /* Initially hidden */
+            width: 100%;
+            height: 100%;
+            flex-direction: row;
+        }
+
+        #jitsi-container {
+            width: 65%;
+            height: 100%;
+            border-left: 2px solid var(--border-color);
+        }
+
+        #whiteboard-container {
+            width: 35%;
+            height: 100%;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
         
-      </div>
-    </div>
-  </div>
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            #meeting-container {
+                flex-direction: column;
+            }
+            #jitsi-container, #whiteboard-container {
+                width: 100%;
+                height: 50%;
+            }
+            #jitsi-container {
+                border-left: none;
+                border-bottom: 2px solid var(--border-color);
+            }
+        }
 
-  
-    <div class="banner">
-      <a href="https://www.instagram.com/skyroom.online" target="_blank">
-        <img src="asset/img/CTA.jpg" alt="instagram@skyroom.online">
-      </a>
-    </div>
-  
-  
-    <div class="trademark"><a href="https://www.skyroom.online/" target="_blank">© اسکای&zwnj;روم®</a>
-    </div>
-  
-</div>
-<div id="page_room" class="col box">
-  <header class="row centered box-shrink">
-    <div class="row spaced-sm box-shrink room-name"><a class="box-shrink" href="javascript:void(0)" target="_blank" data-type="owner_url"><img id="owner_logo" src="asset/img/avatar.png" alt="owner logo"> </a><span><a class="box-shrink" id="owner_name" href="javascript:void(0)" target="_blank" data-type="owner_url">استادبانک</a>
-        </span><span class="box-shrink">:</span> <span class="box-shrink" id="room_name">G.math 2</span></div>
-    <div class="box"></div>
-    <div class="box-shrink">
-      <div class="room-timer" title="زمان سپری شده"><span id="room_timer">21:06</span> <svg width="24" height="24" class="icon ">
-                    <use xlink:href="asset/icons.svg?v12.9.11#shape_access_time"></use>
-                  </svg></div>
-    </div>
-  </header>
-  <div id="workspace" class="col box">
-    <div class="box-shrink row room-nav">
-      <div class="box-shrink hidden" id="recorder">
-        <button id="btn_record" class="btn-flat"><svg width="24" height="24" class="icon red small">
-                    <use xlink:href="asset/icons.svg?v12.9.11#shape_brightness_1"></use>
-                  </svg></button>
-      </div>
-      <div class="box-shrink" id="app_menu"><div class="dropdown"><button type="button" class="dropdown-toggle btn-flat"><svg width="24" height="24" class="icon ">
-                    <use xlink:href="asset/icons.svg?v12.9.11#shape_menu"></use>
-                  </svg></button></div></div>
-      <div class="box"></div>
-      <div id="toolbar" class="box-shrink row spaced ltr"><button title="خروجی صدا" class="btn btn-flat icon-button btn-on" type="button"><span class="btn-text"></span><svg width="24" height="24" class="icon icon-on">
-                    <use xlink:href="asset/icons.svg?v12.9.11#shape_volume_up"></use>
-                  </svg><svg width="24" height="24" class="icon icon-off">
-                    <use xlink:href="asset/icons.svg?v12.9.11#shape_volume_off"></use>
-                  </svg></button><button title="میکروفون" class="btn btn-flat icon-button btn-on" type="button"><span class="btn-text"></span><svg width="24" height="24" class="icon icon-on">
-                    <use xlink:href="asset/icons.svg?v12.9.11#shape_mic"></use>
-                  </svg><svg width="24" height="24" class="icon icon-off">
-                    <use xlink:href="asset/icons.svg?v12.9.11#shape_mic_off"></use>
-                  </svg></button><button title="وبکم" class="btn btn-flat icon-button" type="button"><span class="btn-text"></span><svg width="24" height="24" class="icon icon-on">
-                    <use xlink:href="asset/icons.svg?v12.9.11#shape_videocam"></use>
-                  </svg><svg width="24" height="24" class="icon icon-off">
-                    <use xlink:href="asset/icons.svg?v12.9.11#shape_videocamoff"></use>
-                  </svg></button><button title="اشتراک&zwnj;گذاری صفحه" class="btn btn-flat icon-button" type="button" disabled="true"><span class="btn-text"></span><svg width="24" height="24" class="icon icon-on">
-                    <use xlink:href="asset/icons.svg?v12.9.11#shape_laptop"></use>
-                  </svg><svg width="24" height="24" class="icon icon-off">
-                    <use xlink:href="asset/icons.svg?v12.9.11#shape_laptop"></use>
-                  </svg></button><button title="تخته" class="btn btn-flat icon-button" type="button"><span class="btn-text"></span><svg width="24" height="24" class="icon icon-on">
-                    <use xlink:href="asset/icons.svg?v12.9.11#shape_brush"></use>
-                  </svg><svg width="24" height="24" class="icon icon-off">
-                    <use xlink:href="asset/icons.svg?v12.9.11#shape_brush"></use>
-                  </svg></button><button title="فایل&zwnj;ها" class="btn btn-flat icon-button" type="button"><span class="btn-text"></span><svg width="24" height="24" class="icon icon-on">
-                    <use xlink:href="asset/icons.svg?v12.9.11#shape_slideshow"></use>
-                  </svg><svg width="24" height="24" class="icon icon-off">
-                    <use xlink:href="asset/icons.svg?v12.9.11#shape_slideshow"></use>
-                  </svg></button><button title="بالا بردن دست" class="btn btn-flat icon-button" type="button"><span class="btn-text"></span><svg width="24" height="24" class="icon icon-on">
-                    <use xlink:href="asset/icons.svg?v12.9.11#shape_hand"></use>
-                  </svg><svg width="24" height="24" class="icon icon-off">
-                    <use xlink:href="asset/icons.svg?v12.9.11#shape_hand"></use>
-                  </svg></button></div>
-    </div>
-    <div class="row box layout">
-      <div class="col box-shrink spaced sidebar" id="sidebar"><div class="col box block media-block hidden"><div class="row block-header"><div class="box-shrink block-menu"><div class="dropdown"><button type="button" class="dropdown-toggle btn-flat"><svg width="24" height="24" class="icon small">
-                    <use xlink:href="asset/icons.svg?v12.9.11#shape_more_vert"></use>
-                  </svg></button></div></div><div class="box block-title"><div class="block-title-content"></div></div><div class="box-shrink block-icon"><svg width="24" height="24" class="icon small">
-                    <use xlink:href="asset/icons.svg?v12.9.11#shape_slideshow"></use>
-                  </svg></div></div><div class="col box block-content"><div class="media-player video box modal-dialog-open modal-spinner-open"><div class="media-col"><div class="media-row"><div class="col box video-wrapper"><div class="row centered box-shrink"></div><div class="box"></div><div class="box-shrink"></div><div class="video-statistics hidden"></div></div><div class="video-container"></div></div></div><div class="col spinner" style="z-index: 99; inset: 0px auto auto 0px;"><div class="row centered box-shrink dialog-header"><div class="box dialog-title"></div><div class="box-shrink icon-container"><svg width="24" height="24" class="icon spin">
-                    <use xlink:href="asset/icons.svg?v12.9.11#shape_cached"></use>
-                  </svg></div></div></div><div class="dialog-overlay" style="z-index: 98;"></div></div></div></div><div class="col box block video-grid hidden"><div class="row block-header"><div class="box-shrink block-menu"><div class="dropdown"><button type="button" class="dropdown-toggle btn-flat"><svg width="24" height="24" class="icon small">
-                    <use xlink:href="asset/icons.svg?v12.9.11#shape_more_vert"></use>
-                  </svg></button></div></div><div class="box block-title"><div class="block-title-content">وبکم</div></div><div class="box-shrink block-icon"><svg width="24" height="24" class="icon small">
-                    <use xlink:href="asset/icons.svg?v12.9.11#shape_videocam"></use>
-                  </svg></div></div><div class="col box block-content"><div class="col box videos"></div></div></div><div class="col box block users allow-see-hidden-users"><div class="row block-header"><div class="box-shrink block-menu"><div class="dropdown"><button type="button" class="dropdown-toggle btn-flat"><svg width="24" height="24" class="icon small">
-                    <use xlink:href="asset/icons.svg?v12.9.11#shape_more_vert"></use>
-                  </svg></button></div></div><div class="box block-title"><div class="block-title-content">کاربران</div></div><div class="box-shrink user-handsup-count row hidden"><span class="">0</span><svg width="24" height="24" class="icon small">
-                    <use xlink:href="asset/icons.svg?v12.9.11#shape_hand"></use>
-                  </svg><span class="separator"> | </span></div><span class="box-shrink row users-count">2</span><div class="box-shrink block-icon"><svg width="24" height="24" class="icon small">
-                    <use xlink:href="asset/icons.svg?v12.9.11#shape_group"></use>
-                  </svg></div></div><div class="col box block-content entry"><div class="users-list-wrapper ps"><div class="users-list"><div id="users-role-owner-active-action" class="users-active-action"></div><div id="users-role-owner-hands-up" class="user-role-group"></div><div id="users-role-owner" class="user-role-group"></div><div id="users-role-support-active-action" class="users-active-action"></div><div id="users-role-support-hands-up" class="user-role-group"></div><div id="users-role-support" class="user-role-group"></div><div id="users-role-admin-active-action" class="users-active-action"></div><div id="users-role-admin-hands-up" class="user-role-group"></div><div id="users-role-admin" class="user-role-group"></div><div id="users-role-operator-active-action" class="users-active-action"><row class="row user-row"><div class="box-shrink user-icon role-operator"><svg width="24" height="24" class="icon small">
-                    <use xlink:href="asset/icons.svg?v12.9.11#shape_person"></use>
-                  </svg></div><div class="box user-nickname-box"><div class="user-nickname" title="رضا حیات الغیبی">رضا حیات الغیبی</div></div><div class="box-shrink user-action row reverse"><button class="btn btn-flat action-btn mic icon-button active-action" type="button"><svg width="24" height="24" class="icon small start-icon">
-                    <use xlink:href="asset/icons.svg?v12.9.11#shape_mic"></use>
-                  </svg><span class="btn-text"></span></button><button class="btn btn-flat action-btn webcam off icon-button" type="button"><svg width="24" height="24" class="icon small start-icon">
-                    <use xlink:href="asset/icons.svg?v12.9.11#shape_videocam"></use>
-                  </svg><span class="btn-text"></span></button><button class="btn btn-flat action-btn desktop icon-button" type="button"><svg width="24" height="24" class="icon small start-icon">
-                    <use xlink:href="asset/icons.svg?v12.9.11#shape_laptop"></use>
-                  </svg><span class="btn-text"></span></button><button class="btn btn-flat action-btn action-board off icon-button" type="button"><svg width="24" height="24" class="icon small start-icon">
-                    <use xlink:href="asset/icons.svg?v12.9.11#shape_brush"></use>
-                  </svg><span class="btn-text"></span></button><button class="btn btn-flat action-btn raised-hand off icon-button" type="button"><svg width="24" height="24" class="icon small start-icon">
-                    <use xlink:href="asset/icons.svg?v12.9.11#shape_hand"></use>
-                  </svg><span class="btn-text"></span></button></div><div class="box-shrink disconnected-icon row hidden"><svg width="24" height="24" class="icon small">
-                    <use xlink:href="asset/icons.svg?v12.9.11#shape_disconnected"></use>
-                  </svg></div></row></div><div id="users-role-operator-hands-up" class="user-role-group"></div><div id="users-role-operator" class="user-role-group"></div><div id="users-role-presenter-active-action" class="users-active-action"><row class="row user-row my-user"><div class="box-shrink user-icon role-presenter"><svg width="24" height="24" class="icon small">
-                    <use xlink:href="asset/icons.svg?v12.9.11#shape_person"></use>
-                  </svg></div><div class="box user-nickname-box"><div class="user-nickname" title="NAVID.PO">NAVID.PO</div></div><div class="box-shrink user-action row reverse"><button class="btn btn-flat action-btn mic icon-button" type="button"><svg width="24" height="24" class="icon small start-icon">
-                    <use xlink:href="asset/icons.svg?v12.9.11#shape_mic"></use>
-                  </svg><span class="btn-text"></span></button><button class="btn btn-flat action-btn webcam off icon-button" type="button"><svg width="24" height="24" class="icon small start-icon">
-                    <use xlink:href="asset/icons.svg?v12.9.11#shape_videocam"></use>
-                  </svg><span class="btn-text"></span></button><button class="btn btn-flat action-btn desktop icon-button off" type="button"><svg width="24" height="24" class="icon small start-icon">
-                    <use xlink:href="asset/icons.svg?v12.9.11#shape_laptop"></use>
-                  </svg><span class="btn-text"></span></button><button class="btn btn-flat action-btn action-board off icon-button" type="button"><svg width="24" height="24" class="icon small start-icon">
-                    <use xlink:href="asset/icons.svg?v12.9.11#shape_brush"></use>
-                  </svg><span class="btn-text"></span></button><button class="btn btn-flat action-btn raised-hand off icon-button" type="button"><svg width="24" height="24" class="icon small start-icon">
-                    <use xlink:href="asset/icons.svg?v12.9.11#shape_hand"></use>
-                  </svg><span class="btn-text"></span></button></div><div class="box-shrink disconnected-icon row hidden"><svg width="24" height="24" class="icon small">
-                    <use xlink:href="asset/icons.svg?v12.9.11#shape_disconnected"></use>
-                  </svg></div></row></div><div id="users-role-presenter-hands-up" class="user-role-group"></div><div id="users-role-presenter" class="user-role-group"></div><div id="users-active-action" class="users-active-action"><div id="users-role-1"></div><div id="users-role-0"></div></div><div id="users-hands-up" class="users-hands-up"></div><div id="users-role-1" class="user-role-group"></div><div id="users-role-0" class="user-role-group"></div></div><div class="ps__rail-x" style="left: 0px; bottom: 0px;"><div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div></div><div class="ps__rail-y" style="top: 0px; left: 0px;"><div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 0px;"></div></div></div></div></div><div class="col box block chat"><div class="row block-header"><div class="box-shrink block-menu"><div class="dropdown"><button type="button" class="dropdown-toggle btn-flat"><svg width="24" height="24" class="icon small">
-                    <use xlink:href="asset/icons.svg?v12.9.11#shape_more_vert"></use>
-                  </svg></button></div></div><div class="box block-title"><div class="block-title-content">پیام&zwnj;ها</div></div><div class="box-shrink block-icon"><svg width="24" height="24" class="icon small">
-                    <use xlink:href="asset/icons.svg?v12.9.11#shape_chat"></use>
-                  </svg></div></div><div class="col box block-content"><div class="col box-grow"><div class="col box-grow message-box"><div class="pinned-messages" style="max-height: 170px;"></div><div class="input box-grow message-box-wrapper"><div class="message-box-content ps"><div class="ps__rail-x" style="left: 0px; bottom: 0px;"><div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div></div><div class="ps__rail-y" style="top: 0px; left: 434px;"><div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 0px;"></div></div></div></div><div class="emoji-list hidden"><button data-emoji="0x1F603" class="btn-flat">😃</button><button data-emoji="0x1F604" class="btn-flat">😄</button><button data-emoji="0x1F60A" class="btn-flat">😊</button><button data-emoji="0x1F601" class="btn-flat">😁</button><button data-emoji="0x1F602" class="btn-flat">😂</button><button data-emoji="0x1F605" class="btn-flat">😅</button><button data-emoji="0x1F609" class="btn-flat">😉</button><button data-emoji="0x1F61C" class="btn-flat">😜</button><button data-emoji="0x1F60D" class="btn-flat">😍</button><button data-emoji="0x1F618" class="btn-flat">😘</button><button data-emoji="0x1F60F" class="btn-flat">😏</button><button data-emoji="0x1F612" class="btn-flat">😒</button><button data-emoji="0x1F61E" class="btn-flat">😞</button><button data-emoji="0x1F629" class="btn-flat">😩</button><button data-emoji="0x1F622" class="btn-flat">😢</button><button data-emoji="0x1F62D" class="btn-flat">😭</button><button data-emoji="0x1F624" class="btn-flat">😤</button><button data-emoji="0x1F621" class="btn-flat">😡</button><button data-emoji="0x1F632" class="btn-flat">😲</button><button data-emoji="0x1F628" class="btn-flat">😨</button><button data-emoji="0x1F631" class="btn-flat">😱</button><button data-emoji="0x1F64F" class="btn-flat">🙏</button><button data-emoji="0x1F44D" class="btn-flat">👍</button><button data-emoji="0x1F44E" class="btn-flat">👎</button><button data-emoji="0x1F44F" class="btn-flat">👏</button><button data-emoji="0x1F44B" class="btn-flat">👋</button><button data-emoji="0x1F44C" class="btn-flat">👌</button><button data-emoji="0x270C" class="btn-flat">✌</button><button data-emoji="0x2764" class="btn-flat">❤</button><button data-emoji="0x1F339" class="btn-flat">🌹</button></div></div><div class="col commands-box"><div class="preview-box reply-to row hidden"><div class="reply-to-col1 col box-shrink"><button type="button" class="btn-flat reply-to-cancel" title="انصراف از پاسخ دادن"><svg width="24" height="24" class="icon small">
-                    <use xlink:href="asset/icons.svg?v12.9.11#shape_clear"></use>
-                  </svg></button></div><div class="reply-to-col2 box"><div class="reply-to-username"></div><div class="reply-to-text"></div></div><div class="reply-to-col3 col col-center box-shrink"><svg width="24" height="24" class="icon ">
-                    <use xlink:href="asset/icons.svg?v12.9.11#shape_reply"></use>
-                  </svg></div></div><div class="preview-box edit row hidden"><div class="edit-col1 col box-shrink"><button type="button" class="btn-flat edit-cancel" title="انصراف از پاسخ دادن"><svg width="24" height="24" class="icon small">
-                    <use xlink:href="asset/icons.svg?v12.9.11#shape_clear"></use>
-                  </svg></button></div><div class="edit-col2 box"><div class="edit-username"></div><div class="edit-text"></div></div><div class="edit-col3 col col-center box-shrink"><svg width="24" height="24" class="icon edit">
-                    <use xlink:href="asset/icons.svg?v12.9.11#shape_mode_edit"></use>
-                  </svg></div></div><div class="row editor-wrapper"><div placeholder="پیام خود را وارد کنید" contenteditable="true" class="input box dont-break-out is-rtl"></div><div class="input-limit hidden"></div><div class="emoji-warpper"><button class="btn btn-flat icon-button" type="button"><svg width="24" height="24" class="icon small start-icon">
-                    <use xlink:href="asset/icons.svg?v12.9.11#shape_insert_emoticon"></use>
-                  </svg><span class="btn-text"></span></button></div><div><button class="btn btn-flat icon-button" type="button"><svg width="24" height="24" class="icon small start-icon">
-                    <use xlink:href="asset/icons.svg?v12.9.11#shape_send"></use>
-                  </svg><span class="btn-text"></span></button></div></div></div></div></div></div></div>
-      <div class="row box-grow spaced mainbar" id="mainbar"><div class="col box block media-block"><div class="row block-header"><div class="box-shrink block-menu"><div class="dropdown"><button type="button" class="dropdown-toggle btn-flat"><svg width="24" height="24" class="icon small">
-                    <use xlink:href="asset/icons.svg?v12.9.11#shape_more_vert"></use>
-                  </svg></button></div></div><div class="box block-title"><div class="block-title-content">رضا حیات الغیبی</div></div><div class="box-shrink block-icon"><svg width="24" height="24" class="icon small">
-                    <use xlink:href="asset/icons.svg?v12.9.11#shape_laptop"></use>
-                  </svg></div></div><div class="col box block-content"><div class="media-player video box"><div class="media-col"><div class="media-row"><div class="col box video-wrapper"><div class="row centered box-shrink"><div class="row centered volume-value hidden"></div></div><div class="box"></div><div class="box-shrink"><div class="controls-wrapper row centered" style="opacity: 0;"><div class="controls row box-shrink centered"><button name="play" title="پخش" class="btn icon-button hidden" type="button"><svg width="24" height="24" class="icon start-icon">
-                    <use xlink:href="asset/icons.svg?v12.9.11#shape_play_arrow"></use>
-                  </svg><span class="btn-text"></span></button><button name="pause" class="btn icon-button" title="توقف" type="button"><svg width="24" height="24" class="icon start-icon">
-                    <use xlink:href="asset/icons.svg?v12.9.11#shape_pause"></use>
-                  </svg><span class="btn-text"></span></button><span class="row box"><input type="range" max="5" min="0" step="5" value="0" name="seek" title="" class="box seek hidden"></span><span class="time hidden"><span class="current-time">0:00</span>/<span class="duration">0:00</span></span><button name="loop" title="تکرار" class="btn hidden icon-button" type="button"><svg width="24" height="24" class="icon start-icon">
-                    <use xlink:href="asset/icons.svg?v12.9.11#shape_arrow_forward"></use>
-                  </svg><span class="btn-text"></span></button><button name="loop" title="تکرار" class="btn icon-button hidden" type="button"><svg width="24" height="24" class="icon start-icon">
-                    <use xlink:href="asset/icons.svg?v12.9.11#shape_repeat"></use>
-                  </svg><span class="btn-text"></span></button><span class="volume hidden"><button name="mute" title="بلندی صدا" class="btn icon-button" type="button"><span class="start-icon"><svg width="24" height="24" class="icon ">
-                    <use xlink:href="asset/icons.svg?v12.9.11#shape_volume_up"></use>
-                  </svg></span><span class="btn-text"></span></button><span class="volume-popup hidden"><input type="range" max="1" min="0" step="0.05" value="0.5" name="volume" class="vertical"></span></span><button name="fullscreen" class="btn icon-button" type="button"><svg width="24" height="24" class="icon start-icon">
-                    <use xlink:href="asset/icons.svg?v12.9.11#shape_fullscreen"></use>
-                  </svg><span class="btn-text"></span></button><button name="fullscreenExit" class="btn hidden icon-button" type="button"><svg width="24" height="24" class="icon start-icon">
-                    <use xlink:href="asset/icons.svg?v12.9.11#shape_fullscreen_exit"></use>
-                  </svg><span class="btn-text"></span></button></div></div></div><div class="video-statistics hidden"></div><span class="video-status"><span class="muted hidden"><svg width="24" height="24" class="icon ">
-                    <use xlink:href="asset/icons.svg?v12.9.11#shape_volume_off"></use>
-                  </svg></span><span class="paused hidden"><svg width="24" height="24" class="icon ">
-                    <use xlink:href="asset/icons.svg?v12.9.11#shape_pause"></use>
-                  </svg></span></span></div><div class="video-container"><button name="play" title="پخش" class="btn play-big icon-button hidden" type="button"><svg width="24" height="24" class="icon start-icon">
-                    <use xlink:href="asset/icons.svg?v12.9.11#shape_play_circle_outline"></use>
-                  </svg><span class="btn-text"></span></button><video playsinline="" class="centered" muted="" loop=""></video></div></div></div></div></div></div></div>
-    </div>
-    <div class="hidden" id="audios"><audio id="aud_166a441bfdd34333836233bebfd59955" autoplay="true" controls="true"></audio></div>
-  </div>
-  <div class="trademark"><a href="https://www.skyroom.online/" target="_blank">© اسکای&zwnj;روم®</a>
-  </div>
-</div>
-<div id="console" class="hidden"></div>
-<div id="closet">
-  <audio id="silence" src="asset/sound/silence.mp3" loop=""></audio>
-</div>
-<script>window.APP_VERSION = "12.9.11", window.APP_LANGUAGE = "fa", window.APP_ETU = "", window.initApp = function () {
-    Conference.init("eyJjdXN0b21lciI6Im9zdGFkYmFua19jb20yIiwicm9vbSI6Im9icm9vbTg0MDM3MjkxOSJ9")
-  }</script>
-<script src="asset/platform.min.js?12.9.11"></script>
+    </style>
+</head>
+<body>
 
+    <header>
+        <h1>جلسات نوید</h1>
+    </header>
 
+    <main>
+        <div id="setup-container">
+            <h2>شروع جلسه جدید</h2>
+            <p>یک نام برای جلسه خود وارد کنید و روی دکمه شروع کلیک کنید.</p>
+            <input type="text" id="room-name" placeholder="مثلا: جلسه درس فیزیک">
+            <button id="start-meeting-btn">🚀 شروع جلسه</button>
+        </div>
 
-<script type="text/javascript" src="asset/fa.min.js?12.9.11" async=""></script><script type="text/javascript" src="asset/lib.min.js?12.9.11"></script><script type="text/javascript" src="asset/app.min.js?12.9.11"></script><nav class="menu popup"><ul class="menu-items app-menu"><li class=""><svg width="24" height="24" class="icon ">
-                    <use xlink:href="asset/icons.svg?v12.9.11#shape_info_outline"></use>
-                  </svg>اطلاعات کاربری</li><li class=""><svg width="24" height="24" class="icon ">
-                    <use xlink:href="asset/icons.svg?v12.9.11#shape_network_check"></use>
-                  </svg>وضعیت اتصال</li><li class=""><svg width="24" height="24" class="icon ">
-                    <use xlink:href="asset/icons.svg?v12.9.11#shape_settings"></use>
-                  </svg>تنظیمات</li><li class="presenter-only"><svg width="24" height="24" class="icon ">
-                    <use xlink:href="asset/icons.svg?v12.9.11#shape_web"></use>
-                  </svg>چیدمان<svg width="24" height="24" class="icon small sub-menu-arrow">
-                    <use xlink:href="asset/icons.svg?v12.9.11#shape_keyboard_arrow_left"></use>
-                  </svg><ul class="menu-items"><li data-block="users" class="checked"><svg width="24" height="24" class="icon ">
-                    <use xlink:href="asset/icons.svg?v12.9.11#shape_group"></use>
-                  </svg>کاربران<span class="checked-icon"><svg width="24" height="24" class="icon small">
-                    <use xlink:href="asset/icons.svg?v12.9.11#shape_done"></use>
-                  </svg></span></li><li data-block="chat" class="checked"><svg width="24" height="24" class="icon ">
-                    <use xlink:href="asset/icons.svg?v12.9.11#shape_chat"></use>
-                  </svg>پیام&zwnj;ها<span class="checked-icon"><svg width="24" height="24" class="icon small">
-                    <use xlink:href="asset/icons.svg?v12.9.11#shape_done"></use>
-                  </svg></span></li><li data-block="slideshow" class=""><svg width="24" height="24" class="icon ">
-                    <use xlink:href="asset/icons.svg?v12.9.11#shape_slideshow"></use>
-                  </svg>اسلاید<span class="checked-icon"><svg width="24" height="24" class="icon small">
-                    <use xlink:href="asset/icons.svg?v12.9.11#shape_done"></use>
-                  </svg></span></li><li data-block="whiteboard" class=""><svg width="24" height="24" class="icon ">
-                    <use xlink:href="asset/icons.svg?v12.9.11#shape_brush"></use>
-                  </svg>تخته<span class="checked-icon"><svg width="24" height="24" class="icon small">
-                    <use xlink:href="asset/icons.svg?v12.9.11#shape_done"></use>
-                  </svg></span></li></ul></li><li class="separator"></li><li class=""><svg width="24" height="24" class="icon ">
-                    <use xlink:href="asset/icons.svg?v12.9.11#shape_exit"></use>
-                  </svg>خروج</li><li class="operator-only hover-warning"><svg width="24" height="24" class="icon ">
-                    <use xlink:href="asset/icons.svg?v12.9.11#shape_power_settings_new"></use>
-                  </svg>بستن اتاق</li></ul></nav><nav class="menu popup"><ul class="menu-items"><li class=""><svg width="24" height="24" class="icon small">
-                    <use xlink:href="asset/icons.svg?v12.9.11#shape_aspect_ratio"></use>
-                  </svg> نمایش بزرگتر<span class="checked-icon"><svg width="24" height="24" class="icon small">
-                    <use xlink:href="asset/icons.svg?v12.9.11#shape_done"></use>
-                  </svg></span></li><li class="hidden"><svg width="24" height="24" class="icon small">
-                    <use xlink:href="asset/icons.svg?v12.9.11#shape_lock"></use>
-                  </svg> غیر فعال سازی چت<span class="checked-icon"><svg width="24" height="24" class="icon small">
-                    <use xlink:href="asset/icons.svg?v12.9.11#shape_done"></use>
-                  </svg></span></li><li class="hidden"><svg width="24" height="24" class="icon small">
-                    <use xlink:href="asset/icons.svg?v12.9.11#shape_group"></use>
-                  </svg> حالت خصوصی<span class="checked-icon"><svg width="24" height="24" class="icon small">
-                    <use xlink:href="asset/icons.svg?v12.9.11#shape_done"></use>
-                  </svg></span></li><li class="hidden"><svg width="24" height="24" class="icon small">
-                    <use xlink:href="asset/icons.svg?v12.9.11#shape_delete_sweep"></use>
-                  </svg> پاک کردن همه پیام ها</li><li class=""><svg width="24" height="24" class="icon small">
-                    <use xlink:href="asset/icons.svg?v12.9.11#shape_file_download"></use>
-                  </svg> ذخیره تمام پیام ها</li><li class="hidden"><svg width="24" height="24" class="icon small mute">
-                    <use xlink:href="asset/icons.svg?v12.9.11#shape_block"></use>
-                  </svg> کاربران ساکت شده<svg width="24" height="24" class="icon small sub-menu-arrow">
-                    <use xlink:href="asset/icons.svg?v12.9.11#shape_keyboard_arrow_left"></use>
-                  </svg><ul class="menu-items"><li class="hidden"><svg width="24" height="24" class="icon small">
-                    <use xlink:href="asset/icons.svg?v12.9.11#shape_clear_all"></use>
-                  </svg> رفع مسدودی همه</li><li class="separator"></li></ul></li><li class="separator"></li><li class=""><svg width="24" height="24" class="icon small">
-                    <use xlink:href="asset/icons.svg?v12.9.11#shape_clear"></use>
-                  </svg>بستن</li></ul></nav><nav class="menu popup chat-message-menu"><ul class="menu-items"><li class="pin"><svg width="24" height="24" class="icon small pin">
-                    <use xlink:href="asset/icons.svg?v12.9.11#shape_attach_file"></use>
-                  </svg>سنجاق پیام</li><li class="mute"><svg width="24" height="24" class="icon small mute">
-                    <use xlink:href="asset/icons.svg?v12.9.11#shape_block"></use>
-                  </svg>ساکت کردن کاربر</li><li class="edit"><svg width="24" height="24" class="icon small edit">
-                    <use xlink:href="asset/icons.svg?v12.9.11#shape_mode_edit"></use>
-                  </svg>ویرایش پیام</li><li class="delete"><svg width="24" height="24" class="icon small">
-                    <use xlink:href="asset/icons.svg?v12.9.11#shape_delete"></use>
-                  </svg>حذف پیام</li></ul></nav><nav class="menu popup"><ul class="menu-items"><li class=""><svg width="24" height="24" class="icon small">
-                    <use xlink:href="asset/icons.svg?v12.9.11#shape_aspect_ratio"></use>
-                  </svg> نمایش بزرگتر<span class="checked-icon"><svg width="24" height="24" class="icon small">
-                    <use xlink:href="asset/icons.svg?v12.9.11#shape_done"></use>
-                  </svg></span></li><li class="separator"></li><li class=""><svg width="24" height="24" class="icon small">
-                    <use xlink:href="asset/icons.svg?v12.9.11#shape_clear"></use>
-                  </svg>بستن</li></ul></nav><nav class="menu popup"><ul class="menu-items"><li class=""><svg width="24" height="24" class="icon small">
-                    <use xlink:href="asset/icons.svg?v12.9.11#shape_aspect_ratio"></use>
-                  </svg> نمایش بزرگتر<span class="checked-icon"><svg width="24" height="24" class="icon small">
-                    <use xlink:href="asset/icons.svg?v12.9.11#shape_done"></use>
-                  </svg></span></li></ul></nav><nav class="menu popup"><ul class="menu-items"><li class="separator"></li><li class=""><svg width="24" height="24" class="icon small">
-                    <use xlink:href="asset/icons.svg?v12.9.11#shape_clear"></use>
-                  </svg>بستن</li></ul></nav><nav class="menu popup"><ul class="menu-items"><li class="separator"></li><li class=""><svg width="24" height="24" class="icon small">
-                    <use xlink:href="asset/icons.svg?v12.9.11#shape_clear"></use>
-                  </svg>بستن</li></ul></nav></body></html>
+        <div id="meeting-container">
+            <div id="jitsi-container">
+                <!-- Jitsi Meet will be embedded here -->
+            </div>
+            <div id="whiteboard-container">
+                <!-- Whiteboard will be embedded here -->
+            </div>
+        </div>
+    </main>
+
+    <script>
+        const startButton = document.getElementById('start-meeting-btn');
+        const roomNameInput = document.getElementById('room-name');
+        const setupContainer = document.getElementById('setup-container');
+        const meetingContainer = document.getElementById('meeting-container');
+        const jitsiContainer = document.getElementById('jitsi-container');
+        const whiteboardContainer = document.getElementById('whiteboard-container');
+
+        startButton.addEventListener('click', () => {
+            let roomName = roomNameInput.value.trim();
+            if (roomName === "") {
+                // Generate a random name if empty
+                roomName = "Navid-Meeting-" + Math.random().toString(36).substr(2, 9);
+            }
+
+            // Hide setup and show meeting view
+            setupContainer.style.display = 'none';
+            meetingContainer.style.display = 'flex';
+
+            // --- Jitsi Meet API ---
+            const domain = 'meet.jit.si';
+            const options = {
+                roomName: roomName,
+                width: '100%',
+                height: '100%',
+                parentNode: jitsiContainer,
+                lang: 'fa', // Set language to Farsi
+                configOverwrite: {
+                    startWithAudioMuted: true,
+                    startWithVideoMuted: true,
+                    prejoinPageEnabled: false, // Skip the pre-join screen
+                },
+                interfaceConfigOverwrite: {
+                    // You can hide buttons here if you want
+                    // TOOLBAR_BUTTONS: ['microphone', 'camera', 'desktop', 'chat', 'raisehand', 'fullscreen', 'hangup'],
+                    SHOW_JITSI_WATERMARK: false,
+                    SHOW_WATERMARK_FOR_GUESTS: false
+                }
+            };
+            const api = new JitsiMeetExternalAPI(domain, options);
+
+            // --- Whiteboard Iframe ---
+            // Using Witeboard.com as a simple, no-login collaborative whiteboard
+            const whiteboardFrame = document.createElement('iframe');
+            // We use the same room name to have a unique whiteboard for each meeting
+            whiteboardFrame.src = `https://witeboard.com/${roomName}`;
+            whiteboardContainer.innerHTML = ''; // Clear previous content
+            whiteboardContainer.appendChild(whiteboardFrame);
+        });
+    </script>
+
+</body>
+</html>
